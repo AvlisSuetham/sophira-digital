@@ -1,0 +1,71 @@
+/* --------------------------------------------------------------------------------
+ * Estilos Customizados para Sophira Digital
+ * Arquivo: public/css/style.css
+ * -------------------------------------------------------------------------------- */
+
+/* Configuração de cor personalizada (Variáveis CSS) */
+:root {
+    --color-primary: #0A192F; /* Azul Marinho Escuro */
+    --color-secondary: #64FFDA; /* Ciano Neon / Destaque */
+    --color-text: #CCD6F6; /* Branco Suave */
+    --color-bg-light: #112240; /* Azul Médio (para seções e cards) */
+}
+
+/* Estilos globais e fontes */
+body {
+    /* A classe 'antialiased' do Tailwind é mantida no HTML */
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    transition: all 0.3s ease;
+}
+
+/* Classes Tailwind personalizadas para as cores definidas */
+/* Estas classes são usadas no HTML para aplicar o esquema de cores */
+.bg-primary { background-color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.border-secondary { border-color: var(--color-secondary); }
+
+/* Efeito de hover no botão principal */
+.hover-bg-secondary:hover { 
+    background-color: var(--color-secondary); 
+    color: var(--color-primary); /* Inverte a cor do texto no hover */
+}
+
+.bg-bg-light { background-color: var(--color-bg-light); }
+.text-text { color: var(--color-text); }
+
+/* Sombra de destaque sutil (usando a cor secundária) */
+.shadow-secondary-lg { 
+    box-shadow: 0 10px 15px -3px rgba(100, 255, 218, 0.1), 0 4px 6px -2px rgba(100, 255, 218, 0.05); 
+}
+
+/* Estilo da Navegação - Fixo e Transparente/Sólido */
+.header-fixed {
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Classe aplicada via JavaScript no scroll */
+.header-scrolled {
+    background-color: var(--color-primary) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Efeito de Ícone de Destaque para os cartões de funcionalidades */
+.feature-icon-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    width: 3.5rem; /* w-14 */
+    height: 3.5rem; /* h-14 */
+    background-color: var(--color-bg-light);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efeito de hover no cartão (aplica o efeito no container do ícone) */
+.feature-card:hover .feature-icon-container {
+    transform: translateY(-5px); /* Move o ícone ligeiramente para cima */
+    background-color: rgba(100, 255, 218, 0.2); /* Fundo sutil de destaque */
+}

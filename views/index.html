@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophira Digital | Acelerando Seu Sucesso Online</title>
+    <!-- Carrega o Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/index.css">
+</head>
+<body class="antialiased">
+
+    <!-- 1. Header Fixo e Responsivo -->
+    <header id="main-header" class="header-fixed fixed top-0 left-0 right-0 z-50 py-4 lg:py-6 bg-primary transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <!-- Logo/Nome -->
+            <div class="text-2xl font-bold tracking-wider">
+                <span class="text-text">Sophira</span><span class="text-secondary">.</span>
+            </div>
+
+            <!-- Navegação Desktop -->
+            <nav class="hidden lg:flex space-x-8 items-center">
+                <a href="#solucoes" class="text-text hover:text-secondary transition duration-300">Soluções</a>
+                <a href="#beneficios" class="text-text hover:text-secondary transition duration-300">Por Que Nós?</a>
+                <a href="#depoimentos" class="text-text hover:text-secondary transition duration-300">Casos de Sucesso</a>
+                <a href="#contato" class="bg-secondary text-primary font-bold py-2 px-6 rounded-lg shadow-lg hover:shadow-secondary-lg transition duration-300 transform hover:scale-105">
+                    Orçamento
+                </a>
+            </nav>
+
+            <!-- Botão de Menu Mobile -->
+            <button id="mobile-menu-button" class="lg:hidden text-secondary focus:outline-none p-2 rounded-md hover:bg-bg-light">
+                <!-- Ícone de Hambúrguer (SVG) -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Menu Mobile (oculto por padrão) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-bg-light py-4 mt-3 mx-4 rounded-lg shadow-xl">
+            <nav class="flex flex-col space-y-3 px-4">
+                <a href="#solucoes" class="text-text hover:text-secondary py-2 border-b border-gray-700">Soluções</a>
+                <a href="#beneficios" class="text-text hover:text-secondary py-2 border-b border-gray-700">Por Que Nós?</a>
+                <a href="#depoimentos" class="text-text hover:text-secondary py-2 border-b border-gray-700">Casos de Sucesso</a>
+                <a href="#contato" class="bg-secondary text-primary font-bold py-3 mt-2 text-center rounded-lg hover:shadow-lg transition duration-300">
+                    Orçamento
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Seção Hero (Destaque Principal) -->
+        <section class="min-h-screen pt-32 pb-16 flex items-center bg-primary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+                <!-- Conteúdo de Texto -->
+                <div class="text-center md:text-left">
+                    <p class="text-secondary text-lg font-medium mb-3">Sophira Digital: Seu Primeiro Passo Rumo ao Sucesso</p>
+                    <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
+                        Landing Pages que <span class="text-secondary">Convertam</span> em Escala.
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-8 max-w-lg mx-auto md:mx-0">
+                        Transformamos visitantes em clientes com páginas de alta performance, focadas em design, velocidade e otimização para vendas.
+                    </p>
+                    <a href="#contato" class="inline-block bg-secondary text-primary font-extrabold text-lg py-3 px-10 rounded-xl shadow-2xl hover:shadow-secondary-lg transition duration-300 transform hover:scale-105">
+                        Quero a Minha Landing Page
+                    </a>
+                </div>
+
+                <!-- Ilustração Mockup (substitua com uma imagem real se tiver) -->
+                <div class="hidden md:block relative">
+                    <div class="aspect-w-16 aspect-h-9 p-8 bg-bg-light rounded-2xl shadow-secondary-lg transform rotate-3 hover:rotate-0 transition duration-500">
+                        <div class="text-center p-12">
+                            <!-- Ícone de Monitor/Tela (Placeholder) -->
+                            <svg class="w-20 h-20 mx-auto text-secondary mb-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1.464-3.66L5 15l-3 4 3.5-3.5 1.5-1.5 2.5 2.5zm4.5 0l1.464 3.66L19 20l-3-4 3.5-3.5-1.5-1.5-2.5 2.5L14.25 17zM5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"></path></svg>
+                            <h3 class="text-2xl font-bold text-text mb-2">Seu Negócio, Otimizado</h3>
+                            <p class="text-gray-400">Mockup de uma Landing Page Clean e Focada em Conversão.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Seção Soluções (O que fazemos) -->
+        <section id="solucoes" class="py-20 bg-bg-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4">Nossas <span class="text-secondary">Soluções</span></h2>
+                <p class="text-xl text-gray-400 text-center max-w-2xl mx-auto mb-16">Desenvolvemos páginas otimizadas para cada etapa da jornada do seu cliente.</p>
+
+                <div class="grid md:grid-cols-3 gap-10">
+                    <!-- Cartão 1: Captação de Leads -->
+                    <div class="feature-card p-6 bg-primary rounded-xl shadow-xl transition duration-300 transform hover:shadow-secondary-lg">
+                        <div class="feature-icon-container mb-4">
+                            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6m-3 0v-5a2 2 0 00-2-2h-2a2 2 0 00-2 2v5m-1 0v-2a1 1 0 011-1h2a1 1 0 011 1v2m-6 0h6"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Páginas de Captura</h3>
+                        <p class="text-gray-400">Criamos squeeze pages e pop-ups com copy irresistível para maximizar a captação de e-mails e contatos.</p>
+                    </div>
+
+                    <!-- Cartão 2: Vendas Diretas -->
+                    <div class="feature-card p-6 bg-primary rounded-xl shadow-xl transition duration-300 transform hover:shadow-secondary-lg">
+                        <div class="feature-icon-container mb-4">
+                            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Sales Pages de Alta Conversão</h3>
+                        <p class="text-gray-400">Páginas de vendas longas (VSLs) ou curtas, otimizadas para remover objeções e fechar negócios instantaneamente.</p>
+                    </div>
+
+                    <!-- Cartão 3: Lançamentos -->
+                    <div class="feature-card p-6 bg-primary rounded-xl shadow-xl transition duration-300 transform hover:shadow-secondary-lg">
+                        <div class="feature-icon-container mb-4">
+                            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 10.5e-14L15 2h5a2 2 0 012 2v10a2 2 0 01-2 2h-5l-1.5 2h-3l-1.5-2H4a2 2 0 01-2-2V4a2 2 0 012-2h5l1.5-2zm0 0l-1.5 2H4V4h5l1.5-2zM9 14h6m-3-3v6"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Páginas de Lançamento</h3>
+                        <p class="text-gray-400">Sequências de páginas (Inscrição, Congratulation, Webinário) perfeitamente alinhadas para eventos e lançamentos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Seção Por Que Nós (Benefícios/Diferenciais) -->
+        <section id="beneficios" class="py-20 bg-primary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Imagem/Gráfico de Velocidade (Placeholder) -->
+                    <div class="order-2 md:order-1 relative p-6 bg-bg-light rounded-2xl shadow-secondary-lg">
+                        <div class="flex flex-col items-center justify-center p-8">
+                             <!-- Ícone de Velocímetro (Placeholder) -->
+                            <svg class="w-24 h-24 text-secondary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <h3 class="text-3xl font-bold text-text">Velocidade e SEO</h3>
+                            <p class="text-gray-400">Páginas que carregam em menos de 2 segundos. Garantido.</p>
+                        </div>
+                    </div>
+                    <!-- Conteúdo de Texto -->
+                    <div class="order-1 md:order-2">
+                        <p class="text-secondary text-lg font-medium mb-3">Nosso Diferencial</p>
+                        <h2 class="text-4xl lg:text-5xl font-extrabold mb-6">
+                            Performance Sem <span class="text-secondary">Compromisso</span>.
+                        </h2>
+                        <ul class="space-y-6 text-lg text-gray-300">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-secondary flex-shrink-0 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <div>
+                                    <strong class="text-text">Otimização Extrema:</strong> Códigos leves, limpos e otimizados para PageSpeed Insights.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-secondary flex-shrink-0 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4m-4-4H4"></path></svg>
+                                <div>
+                                    <strong class="text-text">Copywriter Profissional:</strong> Desenho estratégico de texto focado em conversão e gatilhos mentais.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-secondary flex-shrink-0 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2v5l-2-2h-3l2-2h1c1.657 0 3-.895 3-2s-1.343-2-3-2H9a3 3 0 01-3-3V5a3 3 0 013-3h6a3 3 0 013 3v2a3 3 0 01-3 3h-1z"></path></svg>
+                                <div>
+                                    <strong class="text-text">Integração Total:</strong> Conectamos sua landing page com as principais ferramentas de marketing (CRM, E-mail Marketing, Analytics).
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Seção Depoimentos (Casos de Sucesso) -->
+        <section id="depoimentos" class="py-20 bg-bg-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4">O Que Dizem Nossos <span class="text-secondary">Clientes</span></h2>
+                <p class="text-xl text-gray-400 text-center max-w-2xl mx-auto mb-12">Resultados que falam por si. Veja o impacto da Sophira Digital.</p>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Depoimento 1 -->
+                    <div class="p-8 bg-primary rounded-xl shadow-xl border-t-4 border-secondary">
+                        <p class="text-lg italic mb-4">"Nossas taxas de conversão pularam de 3% para 11% após a Sophira reformular nossa página de vendas. O investimento se pagou na primeira semana!"</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-primary font-bold mr-3">J.R.</div>
+                            <div>
+                                <p class="font-semibold text-text">João Ricardo</p>
+                                <p class="text-sm text-gray-400">CEO, Ecom Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 2 -->
+                    <div class="p-8 bg-primary rounded-xl shadow-xl border-t-4 border-secondary">
+                        <p class="text-lg italic mb-4">"A velocidade de entrega e a qualidade do design foram incríveis. Recebemos elogios dos clientes e, mais importante, o funil está funcionando como um relógio."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-primary font-bold mr-3">M.S.</div>
+                            <div>
+                                <p class="font-semibold text-text">Mariana Silva</p>
+                                <p class="text-sm text-gray-400">Fundadora, Startup FitLife</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 3 -->
+                    <div class="p-8 bg-primary rounded-xl shadow-xl border-t-4 border-secondary hidden lg:block">
+                        <p class="text-lg italic mb-4">"Precisávamos de algo rápido e profissional para nosso lançamento. A Sophira entregou o projeto em 48h com toda a otimização que precisávamos."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-primary font-bold mr-3">P.C.</div>
+                            <div>
+                                <p class="font-semibold text-text">Pedro Campos</p>
+                                <p class="text-sm text-gray-400">Diretor de Marketing, TechCorp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Seção CTA (Call to Action) e Formulário de Contato -->
+        <section id="contato" class="py-20 bg-primary">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl lg:text-5xl font-extrabold mb-4">
+                    Pronto para <span class="text-secondary">Multiplicar</span> Seus Resultados?
+                </h2>
+                <p class="text-xl text-gray-400 mb-10">Fale com um especialista e receba um orçamento personalizado em até 24h. Comece sua jornada de alta conversão hoje.</p>
+
+                <!-- Formulário Simples (Placeholder) -->
+                <div class="bg-bg-light p-8 rounded-2xl shadow-secondary-lg">
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <input type="text" placeholder="Seu Nome Completo" required class="w-full p-4 rounded-lg bg-primary border border-gray-700 focus:ring-2 focus:ring-secondary focus:border-secondary transition duration-300 text-text placeholder-gray-500">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Seu Melhor E-mail" required class="w-full p-4 rounded-lg bg-primary border border-gray-700 focus:ring-2 focus:ring-secondary focus:border-secondary transition duration-300 text-text placeholder-gray-500">
+                        </div>
+                        <div>
+                            <textarea placeholder="Fale-nos sobre seu projeto e suas metas de conversão..." rows="4" required class="w-full p-4 rounded-lg bg-primary border border-gray-700 focus:ring-2 focus:ring-secondary focus:border-secondary transition duration-300 text-text placeholder-gray-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-secondary text-primary font-extrabold text-lg py-4 rounded-xl shadow-2xl hover:shadow-secondary-lg transition duration-300 transform hover:scale-[1.01]">
+                            Enviar Solicitação de Orçamento
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. Footer -->
+    <footer class="bg-primary border-t border-gray-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            <p>&copy; 2024 Sophira Digital. Todos os direitos reservados.</p>
+            <p class="mt-2">Desenvolvido com Foco em Conversão e Performance.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para Interatividade -->
+    <script src="public/js/index.js"></script>
+</body>
+</html>
