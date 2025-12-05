@@ -1,71 +1,156 @@
-/* --------------------------------------------------------------------------------
- * Estilos Customizados para Sophira Digital
- * Arquivo: public/css/style.css
- * -------------------------------------------------------------------------------- */
-
-/* Configuração de cor personalizada (Variáveis CSS) */
-:root {
-    --color-primary: #0A192F; /* Azul Marinho Escuro */
-    --color-secondary: #64FFDA; /* Ciano Neon / Destaque */
-    --color-text: #CCD6F6; /* Branco Suave */
-    --color-bg-light: #112240; /* Azul Médio (para seções e cards) */
+/* ==============================
+   RESET BÁSICO
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estilos globais e fontes */
 body {
-    /* A classe 'antialiased' do Tailwind é mantida no HTML */
-    font-family: 'Inter', sans-serif;
-    background-color: var(--color-primary);
-    color: var(--color-text);
-    transition: all 0.3s ease;
+    font-family: "Inter", Arial, sans-serif;
+    background: #0d0d0d;
+    color: #e6e6e6;
+    line-height: 1.6;
 }
 
-/* Classes Tailwind personalizadas para as cores definidas */
-/* Estas classes são usadas no HTML para aplicar o esquema de cores */
-.bg-primary { background-color: var(--color-primary); }
-.text-secondary { color: var(--color-secondary); }
-.border-secondary { border-color: var(--color-secondary); }
-
-/* Efeito de hover no botão principal */
-.hover-bg-secondary:hover { 
-    background-color: var(--color-secondary); 
-    color: var(--color-primary); /* Inverte a cor do texto no hover */
+/* ==============================
+   LAYOUT
+================================= */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #111, #1a1a1a);
+    border-bottom: 1px solid #333;
 }
 
-.bg-bg-light { background-color: var(--color-bg-light); }
-.text-text { color: var(--color-text); }
-
-/* Sombra de destaque sutil (usando a cor secundária) */
-.shadow-secondary-lg { 
-    box-shadow: 0 10px 15px -3px rgba(100, 255, 218, 0.1), 0 4px 6px -2px rgba(100, 255, 218, 0.05); 
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #76c7ff;
 }
 
-/* Estilo da Navegação - Fixo e Transparente/Sólido */
-.header-fixed {
-    transition: background-color 0.3s ease-in-out;
+header p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-top: 10px;
 }
 
-/* Classe aplicada via JavaScript no scroll */
-.header-scrolled {
-    background-color: var(--color-primary) !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
 }
 
-/* Efeito de Ícone de Destaque para os cartões de funcionalidades */
-.feature-icon-container {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9999px;
-    width: 3.5rem; /* w-14 */
-    height: 3.5rem; /* h-14 */
-    background-color: var(--color-bg-light);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+/* ==============================
+   SEÇÕES
+================================= */
+section {
+    margin-bottom: 60px;
 }
 
-/* Efeito de hover no cartão (aplica o efeito no container do ícone) */
-.feature-card:hover .feature-icon-container {
-    transform: translateY(-5px); /* Move o ícone ligeiramente para cima */
-    background-color: rgba(100, 255, 218, 0.2); /* Fundo sutil de destaque */
+section h2, 
+section h3 {
+    font-size: 1.8rem;
+    color: #76c7ff;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ==============================
+   LISTA DE SERVIÇOS
+================================= */
+.services-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.services-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #222;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+.services-list li:hover {
+    color: #76c7ff;
+    padding-left: 5px;
+}
+
+/* ==============================
+   FORMULÁRIO
+================================= */
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input,
+form textarea {
+    padding: 12px;
+    background: #121212;
+    border: 1px solid #222;
+    color: #e6e6e6;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #76c7ff;
+    outline: none;
+    background: #1a1a1a;
+}
+
+form button {
+    padding: 12px;
+    background: #76c7ff;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #a1ddff;
+}
+
+/* ==============================
+   FOOTER
+================================= */
+footer {
+    text-align: center;
+    padding: 25px 0;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* ==============================
+   RESPONSIVIDADE
+================================= */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    main {
+        margin: 20px;
+    }
+
+    section h2, section h3 {
+        font-size: 1.4rem;
+    }
 }
