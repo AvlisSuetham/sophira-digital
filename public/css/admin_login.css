@@ -1,7 +1,10 @@
 body {
-    background: #0f0f0f;
+    /* 1. Cores e Fundo (Claro) */
+    background: #f7f7f7; 
     font-family: Arial, sans-serif;
-    color: white;
+    color: #333333; /* Texto escuro */
+    
+    /* Centralização (mantida) */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,41 +12,76 @@ body {
 }
 
 .login-container {
-    background: #1a1a1a;
+    /* 2. Container (Claro e Sutil) */
+    background: #ffffff; /* Fundo branco puro */
     padding: 40px;
-    width: 350px;
+    width: 380px; /* Levemente mais largo para modernizar */
     border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    /* Sombra clara e profissional */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
     text-align: center;
 }
 
 .login-container h1 {
     margin-bottom: 25px;
+    /* Garante que o título seja escuro */
+    color: #333333; 
 }
 
 .login-container input {
+    /* 3. Ajuste de Campos (Maior Padding e Bordas) */
+    /* CORREÇÃO APLICADA AQUI: box-sizing */
+    box-sizing: border-box;
+    
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    border: none;
+    padding: 14px; /* Aumentado para melhor toque/visual */
+    margin-bottom: 18px; /* Mais espaço entre os campos */
+    border-radius: 8px; /* Levemente mais arredondado */
+    /* Borda sutil para definir o campo no fundo branco */
+    border: 1px solid #ced4da; 
     outline: none;
+    color: #333333; /* Texto interno escuro */
+    background-color: #ffffff;
+    
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-container input:focus {
+    /* Destaque profissional ao focar */
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .login-container button {
+    /* 4. Estilo do Botão (Azul de Destaque) */
+    /* CORREÇÃO APLICADA AQUI: box-sizing */
+    box-sizing: border-box;
+
     width: 100%;
-    padding: 12px;
-    border-radius: 6px;
+    padding: 14px; /* Consistente com os inputs */
+    border-radius: 8px;
     border: none;
     cursor: pointer;
-    background: #4caf50;
-    color: white;
-    font-size: 16px;
+    background: #007bff; /* Azul primário */
+    color: white; 
+    font-size: 17px; /* Levemente maior */
+    font-weight: bold;
+    margin-top: 5px; /* Adicionado um pequeno espaçamento se necessário */
+    
+    transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+    /* Efeito hover sutil */
+    background: #0056b3; 
 }
 
 .error {
-    background: #ff4444;
-    padding: 10px;
-    border-radius: 6px;
-    margin-bottom: 15px;
+    /* 5. Mensagem de Erro (Fundo Vermelho Claro) */
+    background: #dc3545; /* Vermelho padrão para erros */
+    color: white; /* Texto branco para contraste */
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    font-weight: bold;
 }

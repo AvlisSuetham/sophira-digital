@@ -8,17 +8,39 @@
 </head>
 <body>
 
-    <h1 style="text-align:center; margin-top:20px;">📋 Contatos Recebidos</h1>
+<h1 class="titulo">📋 Contatos Recebidos</h1>
 
-    <% if (!contacts || contacts.length === 0) { %>
-        <p style="text-align:center; margin-top:20px; font-size:18px;">
-            Nenhum contato foi enviado ainda.
-        </p>
-    <% } else { %>
+<div class="top-actions">
+    <a href="/admin/dashboard" class="btn voltar">← Voltar</a>
 
+    <% if (contacts && contacts.length > 0) { %>
+        <button id="btnSelecionar" class="btn selecionar">
+            Selecionar para excluir
+        </button>
+
+        <button id="btnCancelar" class="btn cancelar" style="display:none;">
+            Cancelar
+        </button>
+
+        <!-- Form que envolve a tabela — agora os checkboxes serão enviados -->
+        <form id="formExcluir" action="/admin/contacts/delete" method="POST" style="display:none;">
+            <button id="btnExcluir" class="btn excluir" type="submit" onclick="return confirmDelete(event);">
+                Excluir Selecionados
+            </button>
+        </form>
+    <% } %>
+</div>
+
+<% if (!contacts || contacts.length === 0) { %>
+    <p class="nada">Nenhum contato foi enviado ainda.</p>
+<% } else { %>
+
+    <!-- O form realmente precisa envolver os inputs: vamos renderizar a tabela dentro de um form -->
+    <form id="tableForm" action="/admin/contacts/delete" method="POST">
         <table class="contacts-table">
             <thead>
                 <tr>
+                    <th class="col-select"></th>
                     <th>Nome</th>
                     <th>E-mail</th>
                     <th>Telefone</th>
@@ -27,21 +49,140 @@
                     <th>Data</th>
                 </tr>
             </thead>
+
             <tbody>
-                <% contacts.forEach(c => { %>
-                    <tr>
+                <% contacts.forEach((c, index) => { %>
+                    <tr class="linhaContato" 
+                        data-nome="<%= c.nome %>"
+                        data-email="<%= c.email %>"
+                        data-telefone="<%= c.telefone %>"
+                        data-projeto="<%= c.projeto %>"
+                        data-mensagem="<%= c.mensagem %>"
+                        data-data="<%= c.data %>">
+
+                        <td class="col-select">
+                            <!-- checkbox dentro do form -->
+                            <input type="checkbox" name="delete[]" value="<%= index %>" class="checkbox-delete">
+                        </td>
+
                         <td><%= c.nome %></td>
                         <td><%= c.email %></td>
                         <td><%= c.telefone %></td>
                         <td><%= c.projeto %></td>
-                        <td><%= c.mensagem %></td>
+                        <td class="mensagem-curta"><%= c.mensagem %></td>
                         <td><%= c.data %></td>
                     </tr>
                 <% }) %>
             </tbody>
         </table>
 
-    <% } %>
+        <!-- Inclusão do botão de apagar dentro do mesmo form para backup (visível só em seleção) -->
+        <div id="formButtons" style="display:none; text-align:center; margin:18px 0;">
+            <button id="btnExcluirBottom" class="btn excluir" type="submit" onclick="return confirmDelete(event);">
+                Excluir Selecionados
+            </button>
+        </div>
+    </form>
+
+<% } %>
+
+<!-- MODAL PARA EXIBIÇÃO DETALHADA -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span id="fecharModal" class="fechar">&times;</span>
+
+        <h2 id="modalNome"></h2>
+
+        <p><strong>E-mail:</strong> <span id="modalEmail"></span></p>
+        <p><strong>Telefone:</strong> <span id="modalTelefone"></span></p>
+        <p><strong>Projeto:</strong> <span id="modalProjeto"></span></p>
+
+        <h3>Mensagem:</h3>
+        <p id="modalMensagem" class="mensagem-modal"></p>
+
+        <p class="data-modal"><strong>Data:</strong> <span id="modalData"></span></p>
+    </div>
+</div>
+
+<script>
+// ------ Modal ------
+const modal = document.getElementById("modal");
+const fechar = document.getElementById("fecharModal");
+
+document.querySelectorAll(".linhaContato").forEach(linha => {
+    linha.addEventListener("click", e => {
+        // Evita abrir modal ao clicar no checkbox
+        if (e.target.classList.contains("checkbox-delete")) return;
+
+        document.getElementById("modalNome").innerText = linha.dataset.nome;
+        document.getElementById("modalEmail").innerText = linha.dataset.email;
+        document.getElementById("modalTelefone").innerText = linha.dataset.telefone;
+        document.getElementById("modalProjeto").innerText = linha.dataset.projeto;
+        document.getElementById("modalMensagem").innerText = linha.dataset.mensagem;
+        document.getElementById("modalData").innerText = linha.dataset.data;
+
+        modal.style.display = "block";
+    });
+});
+
+fechar.onclick = () => modal.style.display = "none";
+window.onclick = e => { if (e.target == modal) modal.style.display = "none"; };
+
+
+// ------ Seleção para exclusão ------
+// Elementos
+const btnSel = document.getElementById("btnSelecionar");
+const btnCancelar = document.getElementById("btnCancelar");
+const formExcluir = document.getElementById("formExcluir"); // botão superior (não essencial)
+const tableForm = document.getElementById("tableForm");     // form que envolve a tabela
+const formButtons = document.getElementById("formButtons");
+const checkboxes = document.querySelectorAll(".checkbox-delete");
+
+function enterSelectMode() {
+    checkboxes.forEach(c => {
+        c.style.display = "inline-block";
+        c.checked = false;
+    });
+    if (formExcluir) formExcluir.style.display = "inline-block";
+    if (formButtons) formButtons.style.display = "block";
+    if (btnCancelar) btnCancelar.style.display = "inline-block";
+    if (btnSel) btnSel.style.display = "none";
+    // adicionar classe visual às linhas
+    document.querySelectorAll(".linhaContato").forEach(r => r.classList.add('select-mode'));
+}
+
+function exitSelectMode() {
+    checkboxes.forEach(c => {
+        c.style.display = "none";
+        c.checked = false;
+    });
+    if (formExcluir) formExcluir.style.display = "none";
+    if (formButtons) formButtons.style.display = "none";
+    if (btnCancelar) btnCancelar.style.display = "none";
+    if (btnSel) btnSel.style.display = "inline-block";
+    document.querySelectorAll(".linhaContato").forEach(r => r.classList.remove('select-mode'));
+}
+
+if (btnSel) btnSel.addEventListener("click", enterSelectMode);
+if (btnCancelar) btnCancelar.addEventListener("click", exitSelectMode);
+
+// Confirmação antes de enviar exclusão
+function confirmDelete(e) {
+    // conta quantos checkboxes marcados
+    const checked = Array.from(document.querySelectorAll(".checkbox-delete:checked"));
+    if (checked.length === 0) {
+        alert("Selecione ao menos um contato para excluir.");
+        e.preventDefault();
+        return false;
+    }
+    const ok = confirm(`Deseja realmente excluir ${checked.length} contato(s)? Esta ação não pode ser desfeita.`);
+    if (!ok) {
+        e.preventDefault();
+        return false;
+    }
+    return true; // permite envio do form
+}
+</script>
 
 </body>
 </html>

@@ -76,19 +76,6 @@ app.post('/enviar-lead', (req, res) => {
   res.redirect('/contato?sucesso=1#lead-form');
 });
 
-// Página que exibe os leads (somente administrador)
-app.get('/admin/contacts', protegerRota, (req, res) => {
-  const filePath = path.join(__dirname, '../public/contatos.json');
-  let contacts = [];
-
-  if (fs.existsSync(filePath)) {
-    const raw = fs.readFileSync(filePath, 'utf8').trim();
-    if (raw !== "") contacts = JSON.parse(raw);
-  }
-
-  res.render('contacts', { contacts });
-});
-
 // ----------------------------
 // ROTAS DO PAINEL ADMIN
 // ----------------------------
@@ -139,6 +126,78 @@ app.get('/admin/dashboard', protegerRota, (req, res) => {
     usuario: req.session.usuario,
     contacts
   });
+});
+
+// Página que exibe os leads (somente administrador)
+app.get('/admin/contacts', protegerRota, (req, res) => {
+  const filePath = path.join(__dirname, '../public/contatos.json');
+  let contacts = [];
+
+  if (fs.existsSync(filePath)) {
+    const raw = fs.readFileSync(filePath, 'utf8').trim();
+    if (raw !== "") contacts = JSON.parse(raw);
+  }
+
+  res.render('contacts', { contacts });
+});
+
+//Exclusão de Mensagens
+app.post('/admin/contacts/delete', protegerRota, (req, res) => {
+  try {
+    let indices = req.body['delete[]'] || req.body.delete;
+
+    // Nada selecionado
+    if (!indices) {
+      return res.redirect('/admin/contacts?msg=nothing');
+    }
+
+    // Normaliza: sempre virar array
+    if (!Array.isArray(indices)) {
+      indices = [indices];
+    }
+
+    // Converte strings para índices numéricos válidos
+    indices = indices
+      .map(i => parseInt(i, 10))
+      .filter(i => !isNaN(i) && i >= 0);
+
+    // Nenhum índice válido
+    if (indices.length === 0) {
+      return res.redirect('/admin/contacts?msg=invalid');
+    }
+
+    const filePath = path.join(__dirname, '../public/contatos.json');
+
+    // Lê contatos atuais
+    let contacts = [];
+    if (fs.existsSync(filePath)) {
+      const raw = fs.readFileSync(filePath, 'utf8').trim();
+      if (raw !== '') contacts = JSON.parse(raw);
+    }
+
+    // Lista vazia ou corrompida
+    if (!Array.isArray(contacts) || contacts.length === 0) {
+      return res.redirect('/admin/contacts?msg=empty');
+    }
+
+    // Remove do último para o primeiro (para não deslocar índices)
+    indices.sort((a, b) => b - a);
+
+    for (const idx of indices) {
+      if (idx >= 0 && idx < contacts.length) {
+        contacts.splice(idx, 1);
+      }
+    }
+
+    // Salva o arquivo atualizado
+    fs.writeFileSync(filePath, JSON.stringify(contacts, null, 2));
+
+    return res.redirect('/admin/contacts?deleted=1');
+
+  } catch (err) {
+    console.error("Erro ao excluir contatos:", err);
+    return res.redirect('/admin/contacts?error=1');
+  }
 });
 
 // Logout
