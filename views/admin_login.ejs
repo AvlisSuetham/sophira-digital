@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Administrativo</title>
+    <link rel="stylesheet" href="/css/admin_login.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Painel Administrativo</h1>
+
+    <% if (erro) { %>
+        <div class="error">Usuário ou senha incorretos</div>
+    <% } %>
+
+    <form action="/admin/login" method="POST">
+        <input type="text" name="usuario" placeholder="Usuário" required>
+        <input type="password" name="senha" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo</title>
+    <link rel="stylesheet" href="/css/admin_dashboard.css">
+</head>
+<body>
+
+<header class="admin-header">
+    <h1>Bem-vindo, <%= usuario %></h1>
+    <a href="/admin/logout" class="logout-btn">Sair</a>
+</header>
+
+<section class="admin-content">
+    <h2>⚙️ Funções Administrativas</h2>
+
+    <div class="admin-actions">
+
+        <a href="/admin/contacts" class="admin-card">
+            <h3>📬 Gerenciar Contatos</h3>
+            <p>Ver e administrar leads recebidos.</p>
+        </a>
+
+        <a href="/admin/leads" class="admin-card">
+            <h3>📊 Leads</h3>
+            <p>Acessar e revisar envios dos formulários.</p>
+        </a>
+
+        <a href="/admin/settings" class="admin-card">
+            <h3>🛠 Configurações</h3>
+            <p>Ajustar definições do sistema.</p>
+        </a>
+
+        <a href="/" class="admin-card">
+            <h3>🏠 Voltar ao Site</h3>
+            <p>Acessar a página pública.</p>
+        </a>
+
+    </div>
+
+</section>
+
+</body>
+</html>

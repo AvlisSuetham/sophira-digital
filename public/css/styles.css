@@ -1,0 +1,596 @@
+/* ============================ */
+/*      ESTILOS GERAIS         */
+/* ============================ */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #1f1f1f;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Títulos */
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* ============================ */
+/*           HEADER            */
+/* ============================ */
+.header {
+  background: #ffffff;
+  padding: 18px 0;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1f1f1f;
+  letter-spacing: 0.5px;
+}
+
+.nav a {
+  margin-left: 22px;
+  color: #1f1f1f;
+  text-decoration: none;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+/* ============================ */
+/*            HERO             */
+/* ============================ */
+.hero {
+  background: linear-gradient(
+    to bottom right,
+    rgba(59, 130, 246, 0.15),
+    rgba(236, 72, 153, 0.15)
+  );
+  padding: 120px 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 40px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.hero p {
+  margin-top: 12px;
+  font-size: 18px;
+  opacity: 0.75;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 28px;
+  background: #1f1f1f;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 180ms ease;
+}
+
+.btn:hover {
+  background: #3b82f6;
+}
+
+/* ============================ */
+/*          SERVIÇOS           */
+/* ============================ */
+.servicos {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  transition: 180ms;
+}
+
+.card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-3px);
+}
+
+/* ============================ */
+/*         PORTFÓLIO           */
+/* ============================ */
+.portfolio {
+  padding: 80px 0;
+}
+
+.portfolio-item {
+  background: #f5f5f7;
+  padding: 45px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+/* ============================ */
+/*       LEAD / CONTATO        */
+/* ============================ */
+
+.contato {
+  padding: 100px 0;
+  text-align: center;
+  background: #ffffff;
+}
+
+.lead-box {
+  max-width: 700px;
+}
+
+.lead-sub {
+  margin-top: 8px;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.lead-offer {
+  margin: 30px auto;
+  padding: 25px;
+  background: rgba(59, 130, 246, 0.08);
+  border-left: 4px solid #3b82f6;
+  border-radius: 8px;
+}
+
+.lead-offer h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #1f1f1f;
+}
+
+.lead-offer p {
+  margin: 0;
+  font-size: 17px;
+}
+
+.lead-btn {
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 8px;
+  padding: 14px 30px;
+  font-weight: bold;
+  transition: 200ms;
+}
+
+.lead-btn:hover {
+  background: #2563eb;
+}
+
+.lead-small {
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+
+/* ============================ */
+/*           FOOTER            */
+/* ============================ */
+.footer {
+  background: #f5f5f7;
+  padding: 18px;
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ============================ */
+/*         MOBILE TWEAKS       */
+/* ============================ */
+@media (max-width: 600px) {
+  .hero {
+    padding: 80px 0;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+}
+
+/* ============================ */
+/*        FORMS DA LEAD         */
+/* (Corrigido para garantir alinhamento) */
+/* ============================ */
+
+/* 1. Estilo da Seção do Formulário */
+.lead-form-section {
+    padding: 60px 20px;
+    /* Usando a cor de fundo secundária do seu tema */
+    background-color: #f5f5f7; 
+    text-align: center;
+}
+
+.lead-form-section .container {
+    max-width: 500px; 
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    /* Usando 8px para arredondamento */
+    border-radius: 8px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    /* Usando a cor de destaque do seu tema */
+    color: #3b82f6; 
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+.form-description {
+    /* Usando uma cor de texto mais suave para subtítulos */
+    color: #555; 
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+/* 2. Layout do Formulário (Flexbox) */
+.lead-form {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+/* 3. Estilo dos Inputs e Select (Campos de Entrada) */
+.lead-form input[type="text"],
+.lead-form input[type="email"],
+.lead-form input[type="tel"],
+.lead-form select {
+    /* CORREÇÃO ESSENCIAL para evitar quebra de layout */
+    box-sizing: border-box; 
+    
+    width: 100%;
+    padding: 14px 15px;
+    /* Borda padrão do tema */
+    border: 1px solid #e5e7eb; 
+    border-radius: 8px;
+    font-size: 1em;
+    color: #1f1f1f; /* Cor principal do tema */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Estilo de foco para acessibilidade e profissionalismo */
+.lead-form input:focus,
+.lead-form select:focus {
+    /* Usando a cor de destaque do seu tema */
+    border-color: #3b82f6; 
+    /* Box-shadow com a cor de destaque do seu tema */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4); 
+    outline: none; 
+}
+
+/* Estilo específico para o SELECT */
+.lead-form select {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* 4. Estilo do Botão (Call-to-Action) */
+.btn-submit-offer {
+    /* CORREÇÃO: Garante que o botão ocupe 100% da largura do formulário */
+    width: 100%; 
+
+    /* Usando a cor de destaque do seu tema */
+    background-color: #3b82f6; 
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.15em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 5px; 
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-submit-offer:hover {
+    /* Usando a variação escura de #3b82f6 */
+    background-color: #2563eb; 
+    transform: translateY(-2px); 
+}
+
+/* Nota de rodapé do formulário */
+.lead-note {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.85em;
+    /* Usando uma cor de cinza padrão do seu tema */
+    color: #6c757d; 
+}
+
+/* Opcional: Estilo para responsividade em telas menores */
+@media (max-width: 600px) {
+    .lead-form-section .container {
+        padding: 20px;
+    }
+
+    .btn-submit-offer {
+        padding: 12px 20px;
+        font-size: 1.1em;
+    }
+}
+
+/* ============================ */
+/* ESTILOS DE ANIMAÇÃO     */
+/* ============================ */
+
+/* Estado Inicial dos Elementos Ocultos (opacity: 0 e deslocamento) */
+.slide-up,
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-up {
+    transform: translateY(30px);
+}
+
+/* Estado Ativo: Quando o JavaScript adiciona a classe .animated */
+.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Atrasos para a animação em cascata dos cards */
+.delay-1 {
+    transition-delay: 0.1s;
+}
+.delay-2 {
+    transition-delay: 0.2s;
+}
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+/* Animação do Botão HERO (Animate Pulse) */
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); /* Cor do seu azul de destaque */
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+/* ============================ */
+/* TRUST SECTION / CLIENTES   */
+/* ============================ */
+
+.trust-section {
+    padding: 60px 0;
+    background: #f5f5f7; 
+    text-align: center;
+}
+
+.trust-heading {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: #1f1f1f;
+}
+
+/* Faixa de Logotipos dos Clientes */
+.client-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.logo-item {
+    width: 120px;
+    height: 40px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.logo-item:hover {
+    opacity: 1;
+}
+
+.logo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* --------------------------------- */
+/* ESTILOS PARA O SLIDER DE DEPOIMENTOS */
+/* --------------------------------- */
+
+.testimonial-slider {
+    position: relative;
+    /* Altura mínima para evitar que o container colapse durante a transição */
+    min-height: 200px; 
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.testimonial-item {
+    /* Estado inicial: oculto e sobreposto */
+    opacity: 0;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    /* Configura o fade-out/fade-in */
+    transition: opacity 1s ease-in-out; 
+    pointer-events: none;
+    
+    /* Estilo da caixa de depoimento */
+    padding: 40px 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-item.active {
+    /* Estado ativo: visível e ocupa espaço */
+    opacity: 1;
+    position: relative;
+    pointer-events: auto;
+}
+
+.testimonial-item .quote {
+    font-size: 1.4em;
+    font-style: italic;
+    color: #1f1f1f;
+    margin-bottom: 20px;
+    position: relative;
+    line-height: 1.5;
+}
+
+/* Adiciona aspas decorativas */
+.testimonial-item .quote::before {
+    content: "“";
+    font-size: 4em;
+    color: #3b82f6; /* Cor de destaque */
+    position: absolute;
+    top: -30px;
+    left: -15px;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.testimonial-item .author-info {
+    text-align: right;
+    margin-top: 10px;
+    border-top: 1px solid #f5f5f7;
+    padding-top: 10px;
+}
+
+.testimonial-item .author-name {
+    font-weight: bold;
+    display: block;
+    color: #1f1f1f;
+}
+
+.testimonial-item .author-title {
+    font-size: 0.9em;
+    color: #555;
+    display: block;
+}
+
+/* ============================ */
+/*       MOBILE TWEAKS       */
+/* ============================ */
+@media (max-width: 600px) {
+    .client-logos {
+        gap: 15px;
+    }
+    .logo-item {
+        width: 100px;
+    }
+    .testimonial-item {
+        padding: 30px 20px;
+        min-height: 180px; /* Ajuste para mobile */
+    }
+    .testimonial-item .quote {
+        font-size: 1.2em;
+    }
+    .testimonial-item .quote::before {
+        font-size: 3em;
+        top: -15px;
+        left: -10px;
+    }
+}
+
+/* Botão Equipe Sophira */
+.btn-teamsophira {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+    text-decoration: none;
+    transition: 200ms ease;
+}
+
+.btn-teamsophira:hover {
+    background: #3b82f6;
+    color: #fff;
+}
+
+/*Envio do Contato com Sucesso*/
+.sucesso-msg {
+    background: #e6ffe6;
+    border-left: 5px solid #39b339;
+    color: #206620;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    animation: fadeSlideSuccess .6s ease;
+}
+
+@keyframes fadeSlideSuccess {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

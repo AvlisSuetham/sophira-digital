@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sophira Digital — Oferta Exclusiva: Potencialize Seu Negócio</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+
+    <%- include('partials/header') %>
+
+    <section class="hero">
+        <div class="container fade-in">
+            <h1 class="hero-title">Potencialize Seu Negócio Online. Exclusivo: 30% OFF.</h1>
+            <p class="hero-subtitle">Transforme sua ideia em uma presença digital de alto impacto com nossa oferta de boas-vindas por tempo limitado.</p>
+            <a href="#lead-form" class="btn lead-btn animate-pulse">Quero Iniciar Meu Projeto Agora</a>
+        </div>
+    </section>
+
+    <section class="servicos">
+        <div class="container">
+            <h2 class="section-title slide-up">O Caminho para Seu Site de Sucesso</h2>
+
+            <div class="grid benefits-grid">
+                <div class="card slide-up delay-1">
+                    <h3>✅ Investimento Inteligente (30% OFF)</h3>
+                    <p>Desconto válido em todos os serviços: Landing Pages que convertem, Sites Institucionais completos e E-commerces robustos.</p>
+                </div>
+
+                <div class="card slide-up delay-2">
+                    <h3>⚡ Entrega Relâmpago e Qualidade</h3>
+                    <p>Seu projeto online em até **7 dias úteis**, com código limpo, otimização de velocidade e SEO básico garantidos.</p>
+                </div>
+
+                <div class="card slide-up delay-3">
+                    <h3>🤝 Parceria e Suporte Estratégico</h3>
+                    <p>Oferecemos mais que um site. Tenha consultoria dedicada e suporte premium, garantindo o sucesso a longo prazo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust-section">
+        <div class="container">
+            <h3 class="trust-heading slide-up">Quem Confia na Sophira Digital</h3>
+
+            <div class="testimonial-slider slide-up delay-2">
+                
+                <div class="testimonial-item active">
+                    <p class="quote">"O novo site aumentou nossos leads em 40% no primeiro mês. A Sophira Digital entregou performance e design de forma impecável."</p>
+                    <div class="author-info">
+                        <span class="author-name">João Siqueira</span>
+                        <span class="author-title">CEO, Startup TechFlow</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <p class="quote">"Graças ao novo e-commerce, conseguimos dobrar o faturamento online em apenas 90 dias. O suporte é excelente!"</p>
+                    <div class="author-info">
+                        <span class="author-name">Fernanda Lima</span>
+                        <span class="author-title">Diretora de Vendas, ModaStore</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <p class="quote">"Profissionalismo e agilidade são o lema deles. A Landing Page ficou pronta em 5 dias e começou a converter no primeiro dia de campanha."</p>
+                    <div class="author-info">
+                        <span class="author-name">Ricardo Alves</span>
+                        <span class="author-title">Consultor de Marketing</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="lead-form" class="lead-form-section">
+        <div class="container slide-up">
+
+            <h2 class="form-title">Última Chance: Peça Sua Proposta com 30% de Desconto</h2>
+            <p class="form-description">Não perca o prazo. Preencha o formulário e receba sua análise de projeto e proposta em **minutos**.</p>
+
+            <!-- 🔥 MENSAGEM DE SUCESSO (chega após salvar no JSON) -->
+            <% if (query && query.sucesso == "1") { %>
+                <div class="sucesso-msg">
+                    ✔️ Sua solicitação foi enviada com sucesso! Em breve retornaremos.
+                </div>
+            <% } %>
+
+            <form action="/enviar-lead" method="POST" class="lead-form">
+
+                <input type="text" name="nome" placeholder="Nome Completo" required />
+                <input type="email" name="email" placeholder="E-mail" required />
+                <input type="tel" name="telefone" placeholder="Número" />
+
+                <select name="projeto" required>
+                    <option value="">Selecione o Tipo de Projeto</option>
+                    <option value="LandingPage">Landing Page de Alta Conversão</option>
+                    <option value="SiteInstitucional">Site Institucional</option>
+                    <option value="Ecommerce">E-commerce</option>
+                    <option value="Outro">Outro Projeto Personalizado</option>
+                </select>
+
+                <!-- Campo de mensagem -->
+                <textarea 
+                    name="mensagem" 
+                    placeholder="Descreva brevemente sua ideia, necessidade ou dúvidas"
+                    rows="4"
+                    style="resize: vertical;"
+                ></textarea>
+
+                <button type="submit" class="btn-submit-offer">
+                    Receber Proposta com Desconto
+                </button>
+            </form>
+
+            <small class="lead-note">
+                Esta oferta é válida somente até o fim do mês atual.
+            </small>
+
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>
+
+    <script src="/js/anim_lead.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Slider de depoimentos
+            const testimonialItems = document.querySelectorAll('.testimonial-item');
+            let currentTestimonialIndex = 0;
+            if (testimonialItems.length > 1) {
+                function showNextTestimonial() {
+                    testimonialItems[currentTestimonialIndex].classList.remove('active');
+                    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialItems.length;
+                    testimonialItems[currentTestimonialIndex].classList.add('active');
+                }
+                setInterval(showNextTestimonial, 6000);
+            }
+
+            // Scroll Reveal
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const animatedElements = document.querySelectorAll('.slide-up, .fade-in');
+            animatedElements.forEach(el => observer.observe(el));
+
+        });
+    </script>
+
+</body>
+</html>

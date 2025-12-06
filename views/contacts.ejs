@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos Recebidos</title>
+    <link rel="stylesheet" href="/css/contacts.css">
+</head>
+<body>
+
+    <h1 style="text-align:center; margin-top:20px;">📋 Contatos Recebidos</h1>
+
+    <% if (!contacts || contacts.length === 0) { %>
+        <p style="text-align:center; margin-top:20px; font-size:18px;">
+            Nenhum contato foi enviado ainda.
+        </p>
+    <% } else { %>
+
+        <table class="contacts-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Projeto</th>
+                    <th>Mensagem</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% contacts.forEach(c => { %>
+                    <tr>
+                        <td><%= c.nome %></td>
+                        <td><%= c.email %></td>
+                        <td><%= c.telefone %></td>
+                        <td><%= c.projeto %></td>
+                        <td><%= c.mensagem %></td>
+                        <td><%= c.data %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+    <% } %>
+
+</body>
+</html>

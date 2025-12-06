@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+.contacts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contacts-table thead {
+    background: #222;
+    color: white;
+}
+
+.contacts-table th,
+.contacts-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.contacts-table td {
+    font-size: 14px;
+}
