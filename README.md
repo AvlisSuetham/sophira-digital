@@ -1,32 +1,33 @@
-Sophira Digital
+🎵 Sophira Digital
+Sistema de Landing Page, Captura de Leads e Painel Administrativo
 
-Projeto: Sophira Digital — landing, captura de leads e painel administrativo simples
-Autor: Matheus
-Linguagem: Node.js (Express) + EJS
-Status: Protótipo / MVP (uso local ou testes). Não recomendado em produção sem melhorias de segurança.
 
-🔎 Visão geral
 
-Sophira Digital é um site/landing page para captura de leads com:
 
-formulário público que grava leads em public/contatos.json
 
-mensagem de sucesso exibida após envio (/contato?sucesso=1#lead-form)
 
-painel administrativo simples com login (dados em public/login.json)
+Sophira Digital é um protótipo funcional de um sistema completo que inclui:
 
-dashboard administrativo com links para funções (hub)
+🌐 Landing page institucional
 
-página de listagem de contatos com visualização em modal e exclusão em lote
+✉️ Formulário de envio de leads
 
-views EJS, CSS e scripts JS básicos para animações e comportamentos
+📁 Armazenamento de contatos em arquivo JSON
 
-Observação importante: por simplicidade os dados (usuários e leads) são armazenados em arquivos JSON no servidor. Isso não é adequado para produção. Recomenda-se migrar para um banco de dados (Postgres / MySQL / MongoDB) e usar hashing de senhas.
+🔐 Painel administrativo com login
 
-📁 Estrutura do projeto (resumida)
-/project-root
+🗂️ Listagem de contatos com modal detalhado
+
+❌ Exclusão em lote de leads
+
+🎨 Front-end leve e responsivo (HTML, CSS e JS)
+
+Este projeto é ideal tanto para estudo quanto como base para sistemas simples de captura de clientes.
+
+📂 Estrutura do Projeto
+/
 ├─ src/
-│  └─ app.js                # Servidor Express (rotas e lógica)
+│  └─ app.js                 # Servidor Express + rotas
 ├─ views/
 │  ├─ home.ejs
 │  ├─ lead.ejs
@@ -43,74 +44,45 @@ Observação importante: por simplicidade os dados (usuários e leads) são arma
 │  │  └─ admin_dashboard.css
 │  ├─ js/
 │  │  └─ anim_lead.js
-│  ├─ contatos.json         # arquivo onde leads são salvos (gerado em runtime)
-│  └─ login.json            # usuários do painel (ex.: admin/admin)
-├─ data/ (opcional sugerido)
+│  ├─ contatos.json          # Leads gravados
+│  └─ login.json             # Usuários do painel
 ├─ package.json
 └─ README.md
 
-⚙️ Dependências principais
+🛠️ Tecnologias Utilizadas
 
-node >= 14 (recomendado)
+Node.js + Express
 
-express
+EJS (Template Engine)
 
-ejs
+Express-session
 
-express-session
+File System (fs) para persistência local
 
-(fs, path — módulos nativos do Node)
+CSS puro para estilização
 
-Exemplo de package.json (trecho relevante):
+JavaScript Vanilla para interações
 
-"dependencies": {
-  "express": "^4.x",
-  "ejs": "^3.x",
-  "express-session": "^1.x"
-}
+🚀 Instalação e Uso
+1️⃣ Clone o repositório
+git clone https://github.com/SEU_USUARIO/sophira-digital.git
+cd sophira-digital
 
-
-Instalação:
-
+2️⃣ Instale as dependências
 npm install
 
-
-Start (assumindo script start em package.json):
-
+3️⃣ Inicie o servidor
 npm start
-# ou
-node src/app.js
 
-🛣️ Rotas e comportamento
-Públicas
 
-GET / — página principal (views/home.ejs)
+O servidor rodará em:
+👉 http://localhost:3000/
 
-GET /contato — página do formulário de lead (views/lead.ejs)
+🔐 Login do Painel Administrativo
 
-POST /enviar-lead — recebe o form, salva em public/contatos.json, redireciona para /contato?sucesso=1#lead-form
+Arquivo: public/login.json
 
-Comportamento do envio: o servidor acrescenta um objeto lead com { nome, email, telefone, projeto, mensagem, data } a um array no public/contatos.json.
-
-Admin / Painel
-
-GET /admin/login — tela de login (view admin_login.ejs)
-
-POST /admin/login — autentica usando public/login.json, cria sessão e redireciona para /admin/dashboard
-
-GET /admin/dashboard — hub administrativo (admin_dashboard.ejs) — protegido
-
-GET /admin/contacts — lista contatos (view contacts.ejs) — protegido
-
-POST /admin/contacts/delete — recebe delete[] (índices) e remove itens de public/contatos.json — protegido
-
-GET /admin/logout — encerra sessão
-
-Nota: Rotas administrativas usam middleware protegerRota que verifica req.session.logado.
-
-📄 Arquivos JSON de exemplo
-
-public/login.json
+Exemplo padrão:
 
 [
   { "usuario": "admin", "senha": "admin" },
@@ -119,105 +91,85 @@ public/login.json
 ]
 
 
-public/contatos.json (exemplo)
+Acesse o painel:
+👉 /admin/login
 
-[
-  {
-    "nome": "João Silva",
-    "email": "joao@example.com",
-    "telefone": "11999999999",
-    "projeto": "LandingPage",
-    "mensagem": "Quero um site minimalista",
-    "data": "06/12/2025 15:20:30"
-  }
-]
+Após logar, você será redirecionado ao dashboard.
 
-🧩 Como funciona a exclusão em lote (fluxo)
+📬 Captura de Leads
 
-Admin abre /admin/contacts.
+Rota pública:
 
-Clica em Selecionar para excluir → checkboxes aparecem.
+GET /contato – página com formulário
 
-Marca os contatos que deseja excluir (cada checkbox tem value=index do array).
+POST /enviar-lead – salva no arquivo public/contatos.json
 
-Clica em Excluir Selecionados → formulário POST para /admin/contacts/delete.
+Exemplo de lead salvo:
 
-Backend recebe delete[] (array de índices), ordena índices em ordem decrescente e splice cada um do array carregado, escreve contatos.json atualizado.
+{
+  "nome": "João Silva",
+  "email": "joao@example.com",
+  "telefone": "11999999999",
+  "projeto": "Landing Page",
+  "mensagem": "Quero um orçamento",
+  "data": "06/12/2025 15:20:30"
+}
 
-Observação: é crítica a correspondência do índice da view com a ordem do array em JSON; se outro processo alterar o arquivo simultaneamente pode haver descompasso.
+📁 Painel de Contatos
 
-🛡️ Segurança e melhorias recomendadas
+Modal detalhado ao clicar em qualquer linha
 
-Nunca deixe usuários e senhas em texto plano em produção. Use hashing (bcrypt) e um DB seguro.
+Botão Selecionar para excluir
 
-Mover arquivos de dados (contatos.json, login.json) para fora de public/ (por ex. /data) para não expô-los publicamente.
+Exclusão em lote via POST /admin/contacts/delete
 
-Usar HTTPS e variáveis de ambiente para segredos (ex.: SESSION_SECRET).
+Interface limpa e responsiva
 
-Substituir armazenamento em JSON por um banco de dados (SQLite/Postgres/Mongo).
+🔧 Melhorias Recomendadas (para produção)
 
-Implementar proteção CSRF para rotas de escrita (forms) em produção.
+Usar banco de dados verdadeiro (Postgres, MongoDB, SQLite)
 
-Implementar controle de permissões/roles (admin/editor).
+Hash de senhas com bcrypt
 
-Tratar concorrência em escrita de arquivo (locks) ou usar DB transacional.
+Mover .json para /data fora do /public
 
-Validar e sanitizar os dados do formulário para evitar injeção.
+Segurança extra:
 
-🧰 Solução de problemas (erros comuns)
+Helmet
 
-Failed to lookup view "login" in views directory
--> Verifique nome do arquivo views/admin_login.ejs (ou login.ejs se for o nome usado). res.render('admin_login') deve corresponder ao filename.
+Rate limit
 
-req is not defined no EJS
--> Ao renderizar passe apenas o que precisa: res.render('lead', { query: req.query }) e no EJS use query.sucesso.
+Sanitização e validação
 
-JSON não é criado/escrito
+CSRF protection
 
-Verifique permissões de escrita na pasta.
+Logs estruturados (Winston)
 
-Caminho de filePath deve ser correto (com base em __dirname).
-
-Recomenda-se usar /data/contatos.json fora de public/.
-
-Verifique erros de parse: arquivo corrompido causa falha em JSON.parse.
-
-Login sempre falha
-
-Verifique nomes dos campos do formulário (name="usuario" e name="senha").
-
-Adicione console.log(req.body) temporariamente para ver o que está sendo enviado.
-
-Verifique o conteúdo de public/login.json e o caminho do arquivo.
-
-✅ Boas práticas de desenvolvimento
-
-Colocar contatos.json em /data e atualize app.js com path.join(__dirname, '../data/contatos.json')
-
-Manter SESSION_SECRET em .env e usar process.env.SESSION_SECRET
-
-Adicionar helmet, rate-limit e express-validator para segurança
-
-Adicionar testes automatizados para rotas críticas
-
-📦 Scripts sugeridos (package.json)
+🧩 Scripts no package.json
 "scripts": {
   "start": "node src/app.js",
   "dev": "nodemon src/app.js"
 }
 
-✨ Próximos passos / ideias de evolução
+📌 Roadmap Futuro
 
-Migrar armazenamento para banco de dados (MongoDB/Postgres)
+API REST para leads
 
-Painel com autenticação JWT e API REST
+Dashboard com filtros e gráficos
 
-Dashboard com filtros, busca, exportar CSV
+Exportação para CSV
 
-Integração com e-mail (nodemailer) e notificações (WhatsApp)
+Upload de arquivos
 
-Proteção por rota com permissões por role
+Tema escuro
+
+Controle de permissões (admin / editor)
 
 📜 Licença
 
-MIT — use livremente, com créditos ao autor.
+Este projeto é distribuído sob a licença MIT.
+Use livremente, com créditos ao autor.
+
+❤️ Autor
+
+Desenvolvido por Matheus, com dedicação e visão para transformar a Sophira Digital em um ecossistema completo de software e soluções criativas.
