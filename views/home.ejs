@@ -3,92 +3,131 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sophira Digital</title>
+    <title>Sophira Digital | Desenvolvemos Sites Profissionais de Alta Performance</title>
+    <meta name="description" content="A Sophira Digital transforma suas ideias em sites profissionais, rápidos e otimizados para atrair clientes e impulsionar seu negócio online. Solicite um orçamento!" />
     <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
 
     <%- include('partials/header') %>
 
-    <!-- =========================
-           HERO SECTION
-    ========================== -->
     <section class="hero">
         <div class="container hero-content fade-in"> 
-            <h2>Transformamos Suas Ideias em Sites Profissionais e de Alto Desempenho</h2>
-            <p>Desenvolvemos páginas modernas, rápidas e otimizadas para atrair clientes e fortalecer sua presença digital.</p>
-            <a href="#contato" class="btn lead-btn animate-pulse">Quero um Site Profissional</a>
+            <h1>Impulsione Seu Negócio: Sites Profissionais que Geram Resultados Reais</h1>
+            <p>Especialistas em desenvolvimento web, transformamos sua visão em uma plataforma digital moderna, otimizada para SEO, velocidade e conversão de clientes.</p>
+            <a href="#contato" class="btn lead-btn animate-pulse">Quero uma Consultoria Gratuita</a>
         </div>
     </section>
 
-    <!-- =========================
-           SERVIÇOS
-    ========================== -->
+    <section id="diferenciais" class="diferenciais">
+        <div class="container">
+            <h2 class="slide-up">🚀 Por Que a Sophira Digital é a Escolha Certa?</h2>
+            <div class="feature-grid">
+                
+                <div class="feature-box slide-up delay-1">
+                    <h3>Performance Incomparável</h3>
+                    <p>Sites ultrarrápidos e responsivos, garantindo a melhor experiência em qualquer dispositivo. Otimização para os Core Web Vitals do Google.</p>
+                </div>
+
+                <div class="feature-box slide-up delay-2">
+                    <h3>Foco em Conversão (Vendas)</h3>
+                    <p>Desenho estratégico focado em jornadas do usuário, transformando visitantes em leads qualificados e, finalmente, em clientes.</p>
+                </div>
+                
+                <div class="feature-box slide-up delay-3">
+                    <h3>SEO e Visibilidade</h3>
+                    <p>Seu site nasce otimizado para os mecanismos de busca, garantindo que sua empresa seja encontrada por quem realmente precisa do seu serviço.</p>
+                </div>
+
+                <div class="feature-box slide-up delay-4">
+                    <h3>Suporte e Manutenção</h3>
+                    <p>Parceria contínua. Oferecemos suporte técnico completo e planos de manutenção para garantir que sua plataforma esteja sempre segura e atualizada.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
     <section id="servicos" class="servicos">
-        <h2 class="slide-up">Soluções Criadas para Fazer Sua Empresa Crescer</h2>
-        <div class="container grid">
+        <h2 class="slide-up">💡 Nossas Soluções de Impacto</h2>
 
-            <div class="card slide-up delay-1">
-                <h3>Landing Pages de Alta Conversão</h3>
-                <p>Atraia leads, venda mais e apresente suas ofertas com páginas rápidas, estratégicas e totalmente responsivas.</p>
-            </div>
+        <div class="container product-grid">
 
-            <div class="card slide-up delay-2">
-                <h3>Sites Institucionais Profissionais</h3>
-                <p>Transmitimos confiança e credibilidade com designs elegantes e conteúdo estruturado para fortalecer sua marca.</p>
-            </div>
+            <% if (destaque && destaque.length > 0) { %>
 
-            <div class="card slide-up delay-3">
-                <h3>Lojas Virtuais Seguras e Escaláveis</h3>
-                <p>Venda online com plataformas robustas, integração com meios de pagamento e experiência de compra otimizada.</p>
-            </div>
+                <% destaque.forEach((p, index) => { %>
+                    <a href="<%= p.path %>" class="product-box solution-box slide-up delay-<%= index + 1 %>">
 
-            <div class="card slide-up delay-4">
-                <h3>Suporte e Atualização</h3>
-                <p>Garantimos que seu site permaneça seguro, rápido e sempre atualizado, sem dores de cabeça.</p>
-            </div>
+                        <div class="thumb-container">
+                            <img src="/<%= p.thumb %>" alt="<%= p.name %>">
+                        </div>
+                        
+                        <h3><%= p.name %></h3>
+                    </a>
+                <% }) %>
+
+            <% } else { %>
+                <p class="nenhum-produto">Entre em contato para conhecer as nossas soluções personalizadas para o seu negócio.</p>
+            <% } %>
 
         </div>
     </section>
 
-    <!-- =========================
-           PORTFÓLIO
-    ========================== -->
-    <section id="portfolio" class="portfolio">
-        <h2 class="slide-up">Confira nossos produtos</h2>
+    <section id="processo" class="processo bg-light">
+        <div class="container">
+            <h2 class="slide-up">👣 Seu Projeto em 4 Passos Simples</h2>
+            <div class="process-steps">
 
-        <div class="container grid">
-            <div class="portfolio-item slide-up delay-1">Landing Page — Clínica Médica</div>
-            <div class="portfolio-item slide-up delay-2">E-commerce — Moda Feminina</div>
-            <div class="portfolio-item slide-up delay-3">Site Institucional — Empresa de Tecnologia</div>
+                <div class="step-item slide-up delay-1">
+                    <span class="step-number">1</span>
+                    <h3>Planejamento Estratégico</h3>
+                    <p>Entendemos profundamente suas metas, público-alvo e nicho de mercado para definir a arquitetura ideal.</p>
+                </div>
+
+                <div class="step-item slide-up delay-2">
+                    <span class="step-number">2</span>
+                    <h3>Design e Prototipagem</h3>
+                    <p>Criação de um design moderno e UX/UI focado na conversão, aprovado por você antes de qualquer código.</p>
+                </div>
+
+                <div class="step-item slide-up delay-3">
+                    <span class="step-number">3</span>
+                    <h3>Desenvolvimento e Otimização</h3>
+                    <p>Codificação limpa, integração de sistemas, testes rigorosos de performance e otimização para SEO e velocidade.</p>
+                </div>
+
+                <div class="step-item slide-up delay-4">
+                    <span class="step-number">4</span>
+                    <h3>Lançamento e Suporte</h3>
+                    <p>Implantação segura e suporte pós-lançamento, garantindo o sucesso e a estabilidade contínua do seu projeto.</p>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- =========================
-           CONTATO / LEAD
-    ========================== -->
     <section id="contato" class="contato">
         <div class="container lead-box slide-up"> 
 
-            <h2>Vamos Construir o Seu Site?</h2>
+            <h2>Pronto para Lançar Sua Autoridade Online?</h2>
             <p class="lead-sub">
-                Envie sua ideia e receba um orçamento detalhado em até <strong>24 horas</strong>.
+                Agende uma conversa e receba uma análise do seu projeto com um orçamento detalhado em até <strong>24 horas úteis</strong>.
             </p>
 
             <div class="lead-offer">
-                <h3>🎁 Oferta Exclusiva</h3>
+                <h3>⭐ Oportunidade Exclusiva para Novos Clientes</h3>
                 <p>
-                    <strong>10% de desconto</strong> no primeiro projeto + 
-                    <strong>Hospedagem gratuita por 30 dias</strong>.
+                    <strong>Análise SEO Gratuita</strong> do seu site atual (ou da concorrência) + 
+                    <strong>Hospedagem de Lançamento Gratuita por 60 dias</strong>.
                 </p>
-                <p class="lead-gain">Condições especiais para você lançar seu site da forma mais profissional possível.</p>
+                <p class="lead-gain">Aproveite condições especiais e comece a dominar o mercado digital com o pé direito.</p>
             </div>
 
-            <a href="mailto:contato@sophira.digital" class="btn lead-btn">
-                Solicitar Orçamento Agora
+            <a href="/contato#lead-form" class="btn lead-btn btn-cta-large">
+                Solicitar Diagnóstico Gratuito Agora
             </a>
 
-            <p class="lead-small">Promoção válida até <strong>31 de Dezembro</strong>.</p>
+            <p class="lead-small">Oferta válida até <strong>31 de Dezembro</strong>. Não perca esta chance!</p>
 
         </div>
     </section>

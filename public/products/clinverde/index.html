@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clínica Vida Verde</title>
+  <meta name="description" content="Clínica hospitalar com atendimento humanizado, urgência 24h e especialistas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="logo" href="#" aria-label="Página inicial Clínica Vida Verde">
+        <span class="logo__mark">✚</span>
+        <span class="logo__text">Clínica Vida Verde</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <input type="checkbox" id="menu-toggle" class="nav__toggle" aria-label="Abrir menu" />
+        <label for="menu-toggle" class="nav__hamburger" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </label>
+        <ul class="nav__list">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#especialistas">Especialistas</a></li>
+          <li><a href="#agendamento">Agendamento</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <a class="cta cta--small" href="#agendamento">Agende agora</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" role="banner" aria-label="Destaque">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1>Cuidado que inspira confiança</h1>
+          <p>Atendimento humanizado, urgência 24h e uma equipe de especialistas para cuidar de você e de quem você ama.</p>
+          <div class="hero__actions">
+            <a class="cta" href="#agendamento">Agendar consulta</a>
+            <a class="cta cta--outline" href="#servicos">Conhecer serviços</a>
+          </div>
+        </div>
+        <div class="hero__card" aria-label="Informações rápidas">
+          <ul class="quick-info">
+            <li>
+              <strong>Urgência 24h</strong>
+              <span>Pronto atendimento todos os dias</span>
+            </li>
+            <li>
+              <strong>Convênios</strong>
+              <span>Aceitamos principais planos</span>
+            </li>
+            <li>
+              <strong>Localização</strong>
+              <span>Centro de Porto Alegre</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero__bg" aria-hidden="true"></div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>Sobre a clínica</h2>
+          <p>Fundada para oferecer cuidado integral, a Vida Verde une tecnologia, acolhimento e excelência clínica em um ambiente seguro e acessível.</p>
+          <p>Nosso compromisso é com a sua saúde: da prevenção ao tratamento, com avaliações multidisciplinares e foco em resultados.</p>
+        </div>
+        <div class="card stats">
+          <div class="stat">
+            <span class="stat__number">15+</span>
+            <span class="stat__label">Especialidades</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">40</span>
+            <span class="stat__label">Profissionais</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">24h</span>
+            <span class="stat__label">Urgência</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="section section--alt">
+      <div class="container">
+        <h2>Nossos serviços</h2>
+        <div class="cards">
+          <article class="card service">
+            <h3>Clínica geral</h3>
+            <p>Consultas completas com foco em prevenção, diagnóstico e acompanhamento contínuo.</p>
+          </article>
+          <article class="card service">
+            <h3>Pediatria</h3>
+            <p>Cuidado carinhoso e especializado para bebês, crianças e adolescentes.</p>
+          </article>
+          <article class="card service">
+            <h3>Ginecologia</h3>
+            <p>Saúde da mulher com exames, consultas e acompanhamento personalizado.</p>
+          </article>
+          <article class="card service">
+            <h3>Cardiologia</h3>
+            <p>Avaliações cardiológicas, exames e gestão de fatores de risco.</p>
+          </article>
+          <article class="card service">
+            <h3>Ortopedia</h3>
+            <p>Atendimento a lesões, dores musculares e reabilitação funcional.</p>
+          </article>
+          <article class="card service">
+            <h3>Exames</h3>
+            <p>Laboratoriais e imagem com resultados rápidos e precisos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="especialistas" class="section">
+      <div class="container">
+        <h2>Nossos especialistas</h2>
+        <div class="cards cards--team">
+          <article class="card team">
+            <div class="avatar" aria-hidden="true">DR</div>
+            <h3>Dr. Rafael Santos</h3>
+            <p>Clínico geral — abordagem integral e preventiva.</p>
+          </article>
+          <article class="card team">
+            <div class="avatar" aria-hidden="true">DM</div>
+            <h3>Dra. Mariana Oliveira</h3>
+            <p>Pediatra — desenvolvimento infantil e imunizações.</p>
+          </article>
+          <article class="card team">
+            <div class="avatar" aria-hidden="true">DA</div>
+            <h3>Dra. Ana Costa</h3>
+            <p>Cardiologista — avaliação, exames e acompanhamento.</p>
+          </article>
+          <article class="card team">
+            <div class="avatar" aria-hidden="true">DL</div>
+            <h3>Dr. Lucas Pereira</h3>
+            <p>Ortopedista — dor musculoesquelética e reabilitação.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="agendamento" class="section section--alt">
+      <div class="container grid-2">
+        <div>
+          <h2>Agende sua consulta</h2>
+          <p>Preencha o formulário e nossa equipe entrará em contato para confirmar o melhor horário. Sem JavaScript: o envio abre o cliente de e-mail.</p>
+          <blockquote>Se preferir, ligue para (51) 0000-0000 ou visite nossa recepção.</blockquote>
+        </div>
+        <form class="card form" method="POST" action="mailto:contato@vidaverde.com" enctype="text/plain">
+          <div class="form__group">
+            <label for="nome">Nome completo</label>
+            <input id="nome" name="Nome" type="text" required placeholder="Seu nome" />
+          </div>
+          <div class="form__group">
+            <label for="email">E-mail</label>
+            <input id="email" name="Email" type="email" required placeholder="seuemail@exemplo.com" />
+          </div>
+          <div class="form__group">
+            <label for="telefone">Telefone</label>
+            <input id="telefone" name="Telefone" type="tel" placeholder="(51) 9 0000-0000" />
+          </div>
+          <div class="form__group">
+            <label for="especialidade">Especialidade</label>
+            <select id="especialidade" name="Especialidade" required>
+              <option value="">Selecione</option>
+              <option>Clínica geral</option>
+              <option>Pediatria</option>
+              <option>Ginecologia</option>
+              <option>Cardiologia</option>
+              <option>Ortopedia</option>
+              <option>Exames</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="Mensagem" rows="4" placeholder="Conte-nos brevemente sua necessidade"></textarea>
+          </div>
+          <button class="cta" type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>Contato</h2>
+          <ul class="contact-list">
+            <li>
+              <strong>Endereço:</strong>
+              Rua da Saúde, 100 — Centro, Porto Alegre, RS
+            </li>
+            <li>
+              <strong>Telefone:</strong>
+              (51) 0000-0000
+            </li>
+            <li>
+              <strong>E-mail:</strong>
+              contato@vidaverde.com
+            </li>
+            <li>
+              <strong>Horários:</strong>
+              Seg–Sex 7h–20h • Sáb 8h–14h • Urgência 24h
+            </li>
+          </ul>
+        </div>
+        <div class="card map">
+          <h3>Como chegar</h3>
+          <p>Estamos a poucos minutos da Praça da Alfândega, com acesso fácil por ônibus e metrô.</p>
+          <p>Estacionamento conveniado na rua ao lado.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo__mark">✚</span>
+        <span class="logo__text">Clínica Vida Verde</span>
+      </div>
+      <nav aria-label="Links do rodapé">
+        <ul class="footer__links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#agendamento">Agendamento</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#">Política de privacidade</a></li>
+        </ul>
+      </nav>
+      <p class="footer__copy">© 2025 Clínica Vida Verde. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

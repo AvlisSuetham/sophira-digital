@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Importar Página</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f4f4f4;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input[type=text],
+    input[type=file] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 20px;
+      width: 100%;
+      font-size: 16px;
+    }
+    .btn-voltar {
+      background: #cc0000;
+      margin-top: 10px;
+    }
+    .btn-voltar:hover {
+      background: #a30000;
+    }
+    .msg {
+      margin: 15px 0;
+      padding: 10px;
+      background: #e0ffe0;
+      border: 1px solid #00cc00;
+      color: #006600;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .error {
+      background: #ffe0e0;
+      border: 1px solid #cc0000;
+      color: #660000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Importar Página</h1>
+
+    <% if (msg) { %>
+      <div class="msg"><%= msg %></div>
+    <% } %>
+
+    <form action="/admin/importar" method="POST" enctype="multipart/form-data">
+      <label for="nomePagina">Nome da Pasta (URL)</label>
+      <input type="text" name="nomePagina" id="nomePagina" placeholder="Ex: minha-pagina" required>
+
+      <label for="displayName">Nome de Exibição</label>
+      <input type="text" name="displayName" id="displayName" placeholder="Ex: Minha Página" required>
+
+      <label for="zipfile">Arquivo ZIP</label>
+      <input type="file" name="zipfile" id="zipfile" accept=".zip" required>
+
+      <button type="submit">Importar Página</button>
+    </form>
+
+    <!-- Botão Voltar -->
+    <button class="btn-voltar" onclick="window.location.href='/admin/dashboard'">Voltar</button>
+
+  </div>
+</body>
+</html>

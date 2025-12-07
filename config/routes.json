@@ -1,0 +1,9 @@
+[
+  {
+    "method": "get",
+    "path": "/products/clinverde",
+    "view": "products/clinverde/index.html",
+    "name": "Clinica Vida Verde",
+    "thumb": "products/clinverde/thumb.jpg"
+  }
+]

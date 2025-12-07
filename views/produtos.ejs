@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produtos — Sophira Digital</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+    <%- include('partials/header') %>
+
+    <!-- =========================
+           HERO SECTION
+    ========================== -->
+    <section class="hero">
+        <div class="container hero-content fade-in"> 
+            <h2>Nossos Produtos</h2>
+            <p>Páginas profissionais, rápidas e prontas para publicar.</p>
+        </div>
+    </section>
+
+    <!-- =========================
+        PRODUTOS
+    ========================== -->
+    <section id="produtos" class="portfolio">
+        <h2 class="slide-up">Confira nossos produtos</h2>
+
+        <div class="container product-grid">
+
+            <% if (rotas && rotas.length > 0) { %>
+
+                <% rotas.forEach(r => { %>
+                    <a href="<%= r.path %>" class="product-box slide-up">
+                        
+                        <!-- 🔥 agora usa o container que preserva a proporção real -->
+                        <div class="thumb-container">
+                            <img src="/<%= r.thumb %>" alt="<%= r.name %>">
+                        </div>
+
+                        <h3><%= r.name %></h3>
+                    </a>
+                <% }) %>
+
+            <% } else { %>
+                <p class="nenhum-produto">Nenhum produto cadastrado ainda.</p>
+            <% } %>
+
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>
+
+    <script src="/js/anim.js"></script> 
+</body>
+</html>
