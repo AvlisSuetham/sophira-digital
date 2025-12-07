@@ -3,12 +3,55 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clínica Vida Verde</title>
-  <meta name="description" content="Clínica hospitalar com atendimento humanizado, urgência 24h e especialistas." />
+  <title>Clínica Vida Verde | Urgência 24h e Especialidades em Porto Alegre</title>
+  <meta name="description" content="Clínica hospitalar com atendimento humanizado em Porto Alegre. Oferecemos urgência 24h, mais de 15 especialidades e exames com foco total no seu bem-estar." />
+  <meta name="keywords" content="clínica porto alegre, urgência 24h, cardiologia, pediatria, ginecologia, exames, vida verde" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Clínica Vida Verde",
+    "image": "https://stock.adobe.com/br/search?k=da+logo",
+    "url": "https://business.google.com/br/business-profile/",
+    "telephone": "+555100000000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua da Saúde, 100",
+      "addressLocality": "Porto Alegre",
+      "addressRegion": "RS",
+      "postalCode": "90000-000",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday"],
+        "opens": "08:00",
+        "closes": "14:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "00:00",
+        "closes": "23:59",
+        "description": "Urgência 24 horas"
+      }
+    ],
+    "priceRange": "$$"
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -30,6 +73,7 @@
           <li><a href="#especialistas">Especialistas</a></li>
           <li><a href="#agendamento">Agendamento</a></li>
           <li><a href="#contato">Contato</a></li>
+          <li class="nav__cta-tel"><a href="tel:+555100000000" class="cta cta--small cta--tel">Ligue: (51) 0000-0000</a></li>
         </ul>
       </nav>
       <a class="cta cta--small" href="#agendamento">Agende agora</a>
@@ -46,6 +90,7 @@
             <a class="cta" href="#agendamento">Agendar consulta</a>
             <a class="cta cta--outline" href="#servicos">Conhecer serviços</a>
           </div>
+          <p class="hero__contact-tel">Ou ligue agora: <a href="tel:+555100000000"><strong>(51) 0000-0000</strong></a> (Urgência 24h)</p>
         </div>
         <div class="hero__card" aria-label="Informações rápidas">
           <ul class="quick-info">
@@ -156,7 +201,7 @@
         <div>
           <h2>Agende sua consulta</h2>
           <p>Preencha o formulário e nossa equipe entrará em contato para confirmar o melhor horário. Sem JavaScript: o envio abre o cliente de e-mail.</p>
-          <blockquote>Se preferir, ligue para (51) 0000-0000 ou visite nossa recepção.</blockquote>
+          <blockquote>Se preferir, ligue para <a href="tel:+555100000000"><strong>(51) 0000-0000</strong></a> ou visite nossa recepção.</blockquote>
         </div>
         <form class="card form" method="POST" action="mailto:contato@vidaverde.com" enctype="text/plain">
           <div class="form__group">
@@ -203,11 +248,11 @@
             </li>
             <li>
               <strong>Telefone:</strong>
-              (51) 0000-0000
+              <a href="tel:+555100000000">(51) 0000-0000</a>
             </li>
             <li>
               <strong>E-mail:</strong>
-              contato@vidaverde.com
+              <a href="mailto:contato@vidaverde.com">contato@vidaverde.com</a>
             </li>
             <li>
               <strong>Horários:</strong>

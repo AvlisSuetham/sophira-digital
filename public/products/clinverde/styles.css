@@ -74,6 +74,9 @@ body{
 .nav__hamburger span{
   display:block;width:24px;height:2px;background:var(--green-900);margin:5px 0;border-radius:2px;
 }
+/* ESCONDE CTA TELEFONE NA NAVEGAÇÃO DESKTOP */
+.nav__cta-tel { display: none; }
+
 
 /* CTA */
 .cta{
@@ -87,6 +90,16 @@ body{
 .cta--outline:hover{color:#fff;background:var(--green-600)}
 .cta--small{padding:10px 14px}
 
+/* NOVO: Estilo para o CTA de telefone no menu mobile, se houver */
+.cta--tel {
+  background: var(--green-700); /* Cor um pouco mais escura para diferenciar */
+  padding: 10px 14px;
+}
+.cta--tel:hover {
+  background: var(--green-600);
+}
+
+
 /* Hero */
 .hero{
   position:relative;
@@ -99,6 +112,23 @@ body{
 .hero__text h1{font-size:clamp(28px,4vw,40px);margin:0 0 12px;color:var(--green-900)}
 .hero__text p{color:var(--muted);margin:0 0 18px}
 .hero__actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* NOVO: Estilo para o contato de telefone abaixo dos CTAs na Hero */
+.hero__contact-tel {
+  margin-top: 15px;
+  font-size: 18px;
+  color: var(--green-900);
+}
+.hero__contact-tel a {
+  color: var(--green-700);
+  text-decoration: none;
+  border-bottom: 2px solid var(--green-500);
+}
+.hero__contact-tel a:hover {
+  color: var(--green-500);
+  border-bottom-color: var(--green-700);
+}
+
 .hero__card{
   background:#fff;border:1px solid #e8ece9;border-radius:var(--radius);box-shadow:var(--shadow);
   padding:20px;
@@ -110,7 +140,7 @@ body{
   position:absolute;inset:auto -30% -40% -30%;
   height:340px;transform:skewY(-6deg);
   background:radial-gradient(1200px 500px at 50% 0%, rgba(26,160,107,.18), transparent 70%),
-             linear-gradient(90deg, rgba(19,111,77,.15), rgba(19,111,77,0));
+              linear-gradient(90deg, rgba(19,111,77,.15), rgba(19,111,77,0));
   pointer-events:none;
 }
 
@@ -150,6 +180,15 @@ input:focus,select:focus,textarea:focus{border-color:var(--green-600);box-shadow
 
 /* Contato */
 .contact-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+/* NOVO: Estiliza links de telefone/email na lista de contatos */
+.contact-list a {
+  color: var(--text);
+  text-decoration: underline;
+}
+.contact-list a:hover {
+  color: var(--green-700);
+}
+
 .map h3{margin-top:0;color:var(--green-700)}
 
 /* Rodapé */
@@ -179,4 +218,20 @@ input:focus,select:focus,textarea:focus{border-color:var(--green-600);box-shadow
   }
   .nav__toggle:checked ~ .nav__list{display:flex}
   .cards{grid-template-columns:1fr}
+
+  /* NOVO: MOSTRA CTA TELEFONE DENTRO DA NAVEGAÇÃO MOBILE */
+  .nav__cta-tel { 
+    display: list-item; /* Mostra o item na lista mobile */
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--green-100);
+  }
+  .nav__cta-tel a {
+    display: block; /* Garante que o CTA ocupe toda a largura */
+    text-align: center;
+  }
+  /* Remove a sombra do CTA do telefone quando dentro do menu pequeno */
+  .nav__cta-tel .cta--tel {
+    box-shadow: none;
+  }
 }
