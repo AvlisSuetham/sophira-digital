@@ -5,5 +5,12 @@
     "view": "products/clinverde/index.html",
     "name": "Clinica Vida Verde",
     "thumb": "products/clinverde/thumb.jpg"
+  },
+  {
+    "method": "get",
+    "path": "/products/rodrigobarbearia",
+    "view": "products/rodrigobarbearia/index.html",
+    "name": "Rodrigo Barbearia",
+    "thumb": "products/rodrigobarbearia/thumb.jpg"
   }
 ]

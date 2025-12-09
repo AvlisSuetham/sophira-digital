@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodrigo Barbearia | Cortes e Estilo Profissionais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Rodrigo Barbearia</h1>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h2>O Estilo que Você Merece</h2>
+                <p>Cortes clássicos, modernos e barba perfeitamente desenhada. Agende seu horário!</p>
+                <button id="agendarBtn">Agendar Agora!</button>
+            </div>
+        </section>
+
+        <section id="servicos" class="padding-section">
+            <div class="container">
+                <h3>Nossos Serviços</h3>
+                <div class="servicos-grid">
+                    <div class="servico-card">
+                        <h4>Corte de Cabelo</h4>
+                        <p>Cortes de tendência e clássicos com a melhor técnica.</p>
+                    </div>
+                    <div class="servico-card">
+                        <h4>Barba Desenhada</h4>
+                        <p>Toalhas quentes e navalha afiada para um acabamento impecável.</p>
+                    </div>
+                    <div class="servico-card">
+                        <h4>Combo Cabelo + Barba</h4>
+                        <p>O pacote completo para renovar seu visual com um preço especial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section id="galeria" class="padding-section bg-light">
+            <div class="container">
+                <h3>Transformações</h3>
+                <p>Veja a qualidade do nosso trabalho. Cada corte é uma obra de arte.</p>
+                
+                <div class="galeria-grid">
+                    
+                    <div class="galeria-item">
+                        <img src="./photos/fade.jpeg" alt="Corte Fade Moderno com Topete" loading="lazy">
+                        <div class="overlay">
+                            <h4>Fade com Textura</h4>
+                            <p>O clássico degradê em alta. Limpeza e precisão nas laterais.</p>
+                        </div>
+                    </div>
+
+                    <div class="galeria-item">
+                        <img src="./photos/barba.jpg" alt="Barba Longa Estilizada e Modelada" loading="lazy">
+                        <div class="overlay">
+                            <h4>Barba Estilizada</h4>
+                            <p>Modelagem, hidratação e contorno para barbas longas e cheias.</p>
+                        </div>
+                    </div>
+
+                    <div class="galeria-item">
+                        <img src="./photos/penteado.jpg" alt="Corte Clássico Lateral e Penteado" loading="lazy">
+                        <div class="overlay">
+                            <h4>Estilo Executivo</h4>
+                            <p>Para quem busca elegância e um visual sempre impecável.</p>
+                        </div>
+                    </div>
+
+                    <div class="galeria-item">
+                        <img src="./photos/navalha.jpeg" alt="Acabamento de Navalha e Pigmentação" loading="lazy">
+                        <div class="overlay">
+                            <h4>Acabamento Profissional</h4>
+                            <p>Foco nos detalhes que fazem a diferença no contorno da barba.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <p>Gostou do que viu? Transforme seu visual!</p>
+                    <button id="agendarBtnGaleria" onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });">Agende seu horário!</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="padding-section">
+            <div class="container">
+                <h3>Entre em Contato</h3>
+                <p>Preencha o formulário para pré-agendar seu horário. Atendimento das **08:00h às 18:00h**.</p>
+                <form id="leadForm">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone (WhatsApp):</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="horario">Horário Desejado (08:00h às 18:00h):</label>
+                        <input type="time" id="horario" name="horario" min="08:00" max="18:00" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem / Serviço Desejado:</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Ex: Quero um corte Fade e barba, por favor."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Quero Agendar!</button>
+                    <p id="formMessage" style="text-align: center; margin-top: 15px;"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rodrigo Barbearia. Seu estilo em primeiro lugar.</p>
+            <p>Rua Exemplo, 123 - Centro | Telefone: (99) 99999-9999</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
