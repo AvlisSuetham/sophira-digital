@@ -90,7 +90,7 @@
             <a class="cta" href="#agendamento">Agendar consulta</a>
             <a class="cta cta--outline" href="#servicos">Conhecer serviços</a>
           </div>
-          <p class="hero__contact-tel">Ou ligue agora: <a href="tel:+555100000000"><strong>(51) 0000-0000</strong></a> (Urgência 24h)</p>
+          <p class="hero__contact-tel">Ou ligue agora: <a href="tel:+555100000000"><strong>(51) 993258-8092</strong></a> (Urgência 24h)</p>
         </div>
         <div class="hero__card" aria-label="Informações rápidas">
           <ul class="quick-info">
@@ -200,10 +200,10 @@
       <div class="container grid-2">
         <div>
           <h2>Agende sua consulta</h2>
-          <p>Preencha o formulário e nossa equipe entrará em contato para confirmar o melhor horário. Sem JavaScript: o envio abre o cliente de e-mail.</p>
-          <blockquote>Se preferir, ligue para <a href="tel:+555100000000"><strong>(51) 0000-0000</strong></a> ou visite nossa recepção.</blockquote>
+          <p>Preencha o formulário e nossa equipe entrará em contato para confirmar o melhor horário.</p>
+          <blockquote>Se preferir, ligue para <a href="tel:+555100000000"><strong>(51) 993258-8092</strong></a> ou visite nossa recepção.</blockquote>
         </div>
-        <form class="card form" method="POST" action="mailto:contato@vidaverde.com" enctype="text/plain">
+        <form class="card form" method="POST" id="form-agendamento" enctype="text/plain">
           <div class="form__group">
             <label for="nome">Nome completo</label>
             <input id="nome" name="Nome" type="text" required placeholder="Seu nome" />
@@ -287,5 +287,27 @@
       <p class="footer__copy">© 2025 Clínica Vida Verde. Todos os direitos reservados.</p>
     </div>
   </footer>
+
+    <script>
+    const form = document.getElementById("form-agendamento");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // impede envio real
+
+      const botao = form.querySelector("button[type='submit']");
+      botao.disabled = true;
+      botao.textContent = "Enviando...";
+
+      // simulação de envio (2 segundos)
+      setTimeout(() => {
+        alert("✅ Mensagem enviada com sucesso! Nossa equipe entrará em contato em breve.");
+
+        form.reset(); // limpa os campos
+        botao.disabled = false;
+        botao.textContent = "Enviar";
+      }, 2000);
+    });
+  </script>
+
 </body>
 </html>
